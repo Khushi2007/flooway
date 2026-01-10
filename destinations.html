@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlooWay | Destination</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fasthand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="index.html">
+                <div class="logo">
+                    <div class="logo-icon"><img src="images/flooway-logo.png" alt="Logo"></div>
+                    <div class="logo-title">FlooWay</div>
+                </div>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html" class="active">Destinations</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="map-container">
+        <div class="map-bg"></div>
+
+        <div class="map-overlay"></div>
+
+        <button class="map-marker" style="top: 24%; left: 36%;" data-destination="hogsmeade">
+            <span class="dot"></span>
+            <span class="label">Hogsmeade</span>
+            <span class="footprints">
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+            </span>
+        </button>
+
+        <button class="map-marker" style="top: 62%; left: 52%" data-destination="diagon_alley">
+            <span class="dot"></span>
+            <span class="label">Diagon Alley</span>
+            <span class="footprints">
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+            </span>
+        </button>
+
+        <button class="map-marker" style="top: 28%; left: 72%;" data-destination="ministry_of_magic">
+            <span class="dot"></span>
+            <span class="label">Ministry of Magic</span>
+            <span class="footprints">
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+            </span>
+        </button>
+
+        <button class="map-marker" style="top: 18%; left: 28%" data-destination="hogwarts">
+            <span class="dot"></span>
+            <span class="label">Hogwarts</span>
+            <span class="footprints">
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+            </span>
+        </button>
+
+        <button class="map-marker" style="top: 72%; left: 44%" data-destination="platform">
+            <span class="dot"></span>
+            <span class="label">Platform 9¾</span>
+            <span class="footprints">
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+            </span>
+        </button>
+        <button class="map-marker" style="top: 56%; left: 60%" data-destination="gringotts">
+            <span class="dot"></span>
+            <span class="label">Gringotts</span>
+            <span class="footprints">
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+            </span>
+        </button>
+        <button class="map-marker" style="top: 68%; left: 60%" data-destination="knockturn">
+            <span class="dot"></span>
+            <span class="label">Knockturn Alley</span>
+            <span class="footprints">
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+            </span>
+        </button>
+
+        <button class="map-marker" style="top: 32%; left: 22%" data-destination="godric_hollow">
+            <span class="dot"></span>
+            <span class="label">Godric's Hollow</span>
+            <span class="footprints">
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+                <span class="footprint">
+                    <span class="footprint-inner">
+                        <i class="heel"></i>
+                        <i class="toe"></i>
+                    </span>
+                </span>
+            </span>
+        </button>
+
+        <aside class="side-panel">
+            <div class="panel-header">
+                <h2>Destination Name</h2>
+                <button class="close-panel">✕</button>
+            </div>
+
+            <div class="panel-body">
+                <img src="" alt="">
+                <p>Destination description goes here.</p>
+                <a href="#" class="hero-btn">Explore</a>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner footer-center">
+            <div class="footer-brand">
+                <h3>FlooWay</h3>
+                <p>Wizarding Travel, Reimagined.</p>
+            </div>
+
+            <div class="footer-meta">
+                <p>© 2026 FlooWay</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/destinations.js"></script>
+    <script src="js/navbar.js"></script>
+</body>
+</html>
