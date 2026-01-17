@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlooWay | Book Package</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fasthand&display=swap" rel="stylesheet">
+
+</head>
+<body class="page book-package-page">
+
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="index.html">
+                <div class="logo">
+                    <div class="logo-icon"><img src="images/flooway-logo.png" alt="Logo"></div>
+                    <div class="logo-title">FlooWay</div>
+                </div>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="packages.html" class="active">Packages</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="plan-your-trip.html">Plan Your Trip</a></li>
+                <li><a href="your-trips.html">Your Trips</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero book-package-hero">
+            <h1>Book Your Magical Journey</h1>
+            <p>Complete your details and secure your place through the Floo Network.</p>
+        </section>
+
+        <section class="booking-form-section">
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name">
+                    <small class="error-msg"></small>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email">
+                        <small class="error-msg"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone">
+                        <small class="error-msg"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age">
+                        <small class="error-msg"></small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Residential Address</label>
+                    <textarea id="address" rows="2"></textarea>
+                    <small class="error-msg"></small>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="travelers">Number of Travelers</label>
+                        <input type="number" id="travelers" min="1">
+                        <small class="error-msg"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="package">Selected Package</label>
+                        <input type="text" id="package" placeholder="Auto-filled from package page" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="dates">Preferred Travelling Date</label>
+                    <select id="date">
+                        <option id="date1"></option>
+                        <option id="date2"></option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="requests">Special Requests</label>
+                    <textarea id="requests" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="hero-btn">Confirm Booking</button>
+            </form>
+        </section>
+    </main>
+
+    <div class="success-modal" id="successModal">
+        <div class="success-box">
+            <h2>Booking Confirmed 🪄</h2>
+            <p>Your request has been sent through the Floo NetWork. Our FlooWay representatives will contact you shortly.</p>
+            <button class="hero-btn" id="closeModal">Close</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner footer-center">
+            <div class="footer-brand">
+                <h3>FlooWay</h3>
+                <p>Wizarding Travel, Reimagined.</p>
+            </div>
+
+            <div class="footer-meta">
+                <p>© 2026 FlooWay</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/book-package.js"></script>
+</body>
+</html>

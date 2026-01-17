@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlooWay | Contact us</title>
-    <link rel="icon" href="image/x-icon" href="images/flooway-logo.png">
+    <title>FlooWay | Your Trips</title>
     <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fasthand&display=swap" rel="stylesheet">
+
 </head>
-<body class="page contact-page">
+<body class="page trips-page">
+
     <header class="site-header">
         <nav class="navbar">
             <a href="index.html">
@@ -31,47 +38,34 @@
                 <li><a href="packages.html">Packages</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="plan-your-trip.html">Plan Your Trip</a></li>
-                <li><a href="your-trips.html">Your Trips</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="your-trips.html" class="active">Your Trips</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="page-hero contact-page-hero">
-            <h1>Contact FlooWay</h1>
-            <p>Send us an owl — or something faster.</p>
+        <section class="page-hero trips-hero">
+            <h1>Your Magical Journeys</h1>
+            <p>All your planned and booked adventures, gathered in one place.</p>
         </section>
 
-        <section class="contact-section">
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h2>Get in Touch</h2>
-                    <p>
-                        Have questions about magical travel, packages, or destinations?
-                        We’d love to hear from you.
-                    </p>
+        <section class="trips-section">
+            <h2>Planned Trips</h2>
+            <div class="trips-container" id="plannedTrips">
+                <p class="empty-state">No planned trips yet.</p>
+            </div>
+        </section>
 
-                    <ul>
-                        <li>📍 Wizarding World</li>
-                        <li>📧 support@flooway.com</li>
-                        <li>🪄 Available 24/7</li>
-                    </ul>
-                </div>
-
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="tel" placeholder="Your Mobile Number" required>
-                    <textarea placeholder="Your message here..." rows="5" required></textarea>
-                    <button class="hero-btn" type="submit">Send Message</button>
-                </form>
-
+        <section class="trips-section">
+            <h2>Booked Packages</h2>
+            <div class="trips-container" id="bookedTrips">
+                <p class="empty-state">No packages booked yet.</p>
             </div>
         </section>
     </main>
 
-        <footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-inner footer-center">
             <div class="footer-brand">
                 <h3>FlooWay</h3>
@@ -84,5 +78,6 @@
         </div>
     </footer>
     <script src="js/navbar.js"></script>
+    <script src="js/your-trips.js"></script>
 </body>
 </html>

@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlooWay | Contact us</title>
-    <link rel="icon" href="image/x-icon" href="images/flooway-logo.png">
+    <title>FlooWay | Package</title>
     <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="page contact-page">
+<body class="page package-page">
     <header class="site-header">
         <nav class="navbar">
             <a href="index.html">
@@ -28,50 +27,58 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="destinations.html">Destinations</a></li>
-                <li><a href="packages.html">Packages</a></li>
+                <li><a href="packages.html" class="active">Packages</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="plan-your-trip.html">Plan Your Trip</a></li>
                 <li><a href="your-trips.html">Your Trips</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="page-hero contact-page-hero">
-            <h1>Contact FlooWay</h1>
-            <p>Send us an owl — or something faster.</p>
-        </section>
-
-        <section class="contact-section">
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h2>Get in Touch</h2>
-                    <p>
-                        Have questions about magical travel, packages, or destinations?
-                        We’d love to hear from you.
-                    </p>
-
-                    <ul>
-                        <li>📍 Wizarding World</li>
-                        <li>📧 support@flooway.com</li>
-                        <li>🪄 Available 24/7</li>
-                    </ul>
-                </div>
-
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="tel" placeholder="Your Mobile Number" required>
-                    <textarea placeholder="Your message here..." rows="5" required></textarea>
-                    <button class="hero-btn" type="submit">Send Message</button>
-                </form>
-
+    <section class="package-hero">
+        <div class="package-hero-content">
+            <span id="package-badge" class="package-badge"></span>
+            <h1 id="package-title"></h1>
+            <p id="package-tagline"></p>
+            <div class="package-meta">
+                <span id="package-duration"></span>
+                <span id="package-price"></span>
             </div>
-        </section>
-    </main>
+            <div class="package-available-dates">
+                <h3>Available Dates</h3>
+                <ul id="package-available-dates"></ul>
+            </div>
+        </div>
+    </section>
 
-        <footer class="site-footer">
+    <section class="package-details">
+        <div class="package-inner">
+            <p id="package-description" class="package-description"></p>
+            <div class="package-grid">
+                <div class="package-info-card">
+                    <h3>Highlights</h3>
+                    <ul id="package-highlights"></ul>
+                </div>
+                <div class="package-info-card">
+                    <h3>What's Included?</h3>
+                    <ul id="package-includes"></ul>
+                </div>
+                <div class="package-info-card">
+                    <h3>Experiences</h3>
+                    <ul id="package-experiences"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="package-cta">
+        <h2>Ready to Choose This Journey?</h2>
+        <p>Step into the Floo Network and secure your place on this magical adventure.</p>
+        <a id="book-package-btn" class="hero-btn">Book This Package</a>
+    </section>
+
+    <footer class="site-footer">
         <div class="footer-inner footer-center">
             <div class="footer-brand">
                 <h3>FlooWay</h3>
@@ -83,6 +90,8 @@
             </div>
         </div>
     </footer>
+
     <script src="js/navbar.js"></script>
+    <script src="js/package.js"></script>
 </body>
 </html>

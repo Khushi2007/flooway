@@ -64,6 +64,8 @@ markers.forEach(marker => {
         panelImg.alt = data.title;
         panelDesc.textContent = data.desc;
 
+        document.getElementById("explore-btn").href = `destination.html?place=${key}`;
+
         panel.classList.add('open');
         overlay.classList.add('active');
     });
