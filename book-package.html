@@ -21,7 +21,7 @@
 
     <header class="site-header">
         <nav class="navbar">
-            <a href="index.html">
+            <a id="brandLink">
                 <div class="logo">
                     <div class="logo-icon"><img src="images/flooway-logo.png" alt="Logo"></div>
                     <div class="logo-title">FlooWay</div>
@@ -33,13 +33,14 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="destinations.html">Destinations</a></li>
-                <li><a href="packages.html" class="active">Packages</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="plan-your-trip.html">Plan Your Trip</a></li>
-                <li><a href="your-trips.html">Your Trips</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a id="indexLink">Home</a></li>
+                <li><a id="destinationsLink">Destinations</a></li>
+                <li><a id="packagesLink" class="active">Packages</a></li>
+                <li><a id="aboutLink">About</a></li>
+                <li><a id="planYourTripLink">Plan Your Trip</a></li>
+                <li><a id="yourTripsLink">Your Trips</a></li>
+                <li><a id="contactLink">Contact</a></li>
+                <li><a id="profileLink">Profile</a></li>
             </ul>
         </nav>
     </header>
@@ -54,33 +55,33 @@
             <form class="booking-form" id="bookingForm">
                 <div class="form-group">
                     <label for="name">Full Name</label>
-                    <input type="text" id="name">
+                    <input type="text" id="name" readonly>
                     <small class="error-msg"></small>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email">
+                        <input type="email" id="email" readonly>
                         <small class="error-msg"></small>
                     </div>
 
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone">
+                        <input type="tel" id="phone" readonly>
                         <small class="error-msg"></small>
                     </div>
 
                     <div class="form-group">
                         <label for="age">Age</label>
-                        <input type="number" id="age">
+                        <input type="number" id="age" readonly>
                         <small class="error-msg"></small>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="address">Residential Address</label>
-                    <textarea id="address" rows="2"></textarea>
+                    <textarea id="address" rows="2" readonly></textarea>
                     <small class="error-msg"></small>
                 </div>
 
@@ -123,6 +124,14 @@
         </div>
     </div>
 
+    <div class="error-modal" id="errorModal">
+        <div class="error-box">
+            <h2 id="errorBoxTitle"></h2>
+            <p id="errorBoxMessage"></p>
+            <button class="delete-trip-btn" id="closeErrorModal">Close</button>
+        </div>
+    </div>
+
     <footer class="site-footer">
         <div class="footer-inner footer-center">
             <div class="footer-brand">
@@ -138,5 +147,6 @@
 
     <script src="js/navbar.js"></script>
     <script src="js/book-package.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>

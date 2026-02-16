@@ -1,5 +1,6 @@
-const params = new URLSearchParams(window.location.search);
-const key = params.get("plan");
+const bookPackagePageParams = new URLSearchParams(window.location.search);
+const key = bookPackagePageParams.get("plan");
+const userId = bookPackagePageParams.get("uid");
 
 const packageNames = {
     gryffindor: "Bravery & Firebound Trails",
@@ -37,9 +38,23 @@ const packageAvailableDates = {
     ]
 };
 
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const phoneInput = document.getElementById("phone");
+const ageInput = document.getElementById("age");
+const addressInput = document.getElementById("address");
 const packageInput = document.getElementById("package");
 const packageDateOption1 = document.getElementById("date1");
 const packageDateOption2 = document.getElementById("date2");
+
+const allUsers = JSON.parse(localStorage.getItem("flooway_users")) || [];
+const currentUser = allUsers[userId];
+
+nameInput.value = currentUser.name;
+emailInput.value = currentUser.email;
+phoneInput.value = currentUser.phone;
+ageInput.value = currentUser.age;
+addressInput.value = currentUser.address;
 
 if (key && packageNames[key]) {
     packageInput.value = packageNames[key];
@@ -71,55 +86,21 @@ form.addEventListener("submit", function (e) {
 
     let valid = true;
     
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const phone = document.getElementById("phone");
-    const age = document.getElementById("age");
     const travelers = document.getElementById("travelers");
-    const address = document.getElementById("address");
     const date = document.getElementById("date");
     const requests = document.getElementById("requests");
 
-    [name, email, phone, age, travelers, address].forEach(input => clearError(input));
+    [travelers].forEach(input => clearError(input));
 
-    if (!name.value.trim()) {
-        showError(name, "Name is required");
-        valid = false;
-    }
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email.value)) {
-        showError(email, "Enter a valid email");
-        valid = false;
-    }
-
-    if (!phone.value) {
-        showError(phone, "Phone number is required");
-        valid = false;
-    }
-
-    if (age.value < 5) {
-        showError(age, "Minimum age is 5");
-        valid = false;
-    }
 
     if (travelers.value < 1) {
         showError(travelers, "At least 1 traveler required")
         valid = false;
     }
 
-    if (!address.value.trim()) {
-        showError(address, "Address is required");
-        valid = false;
-    }
-
     if (valid) {
         const bookingData = {
-            name: name.value.trim(),
-            email: email.value.trim(),
-            phone: phone.value,
-            age: age.value,
-            address: address.value.trim(),
+            uid: userId,
             travelers: travelers.value,
             packageKey: key,
             packageTitle: packageNames[key],

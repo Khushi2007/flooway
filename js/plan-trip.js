@@ -1,3 +1,6 @@
+const planTripPageParams = new URLSearchParams(window.location.search);
+const userId = planTripPageParams.get("uid");
+
 const form = document.getElementById("tripForm");
 const modal = document.getElementById("successModal");
 const closeModal = document.getElementById("closeModal");
@@ -15,62 +18,42 @@ function clearError(input) {
     error.style.display = "none";
 }
 
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const phoneInput = document.getElementById("phone");
+const ageInput = document.getElementById("age");
+const addressInput = document.getElementById("address");
+
+const allUsers = JSON.parse(localStorage.getItem("flooway_users")) || [];
+const currentUser = allUsers[userId];
+
+nameInput.value = currentUser.name;
+emailInput.value = currentUser.email;
+phoneInput.value = currentUser.phone;
+ageInput.value = currentUser.age;
+addressInput.value = currentUser.address;
+
 form.addEventListener("submit", function(e) {
     e.preventDefault();
 
     let valid = true;
     
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const phone = document.getElementById("phone");
     const travelers = document.getElementById("travelers");
-    const age = document.getElementById("age");
-    const address = document.getElementById("address");
     const destination = document.getElementById("destination");
     const date = document.getElementById("date");
     const notes = document.getElementById("notes");
 
-    [name, email, phone, travelers, age, address].forEach(input => clearError(input));
-
-    if (!name.value.trim()) {
-        showError(name, "Name is required");
-        valid = false;
-    }
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email.value)) {
-        showError(email, "Enter a valid email");
-        valid = false;
-    }
-
-    if (!phone.value) {
-        showError(phone, "Phone number is required");
-        valid = false;
-    }
-
-    if (age.value < 5) {
-        showError(age, "Minimum age is 5");
-        valid = false;
-    }
+    [travelers].forEach(input => clearError(input));
 
     if (travelers.value < 1) {
         showError(travelers, "At least 1 traveler required")
         valid = false;
     }
 
-    if (!address.value.trim()) {
-        showError(address, "Address is required");
-        valid = false;
-    }
-
     if (valid) {
         const tripData = {
-            name: name.value.trim(),
-            email: email.value.trim(),
-            phone: phone.value.trim(),
+            uid: userId,
             travelers: travelers.value,
-            age: age.value,
-            address: address.value.trim(),
             destination: destination.value,
             date: date.value,
             notes: notes.value.trim(),

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlooWay | Register</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fasthand&display=swap" rel="stylesheet">
+</head>
+<body class="auth-page">
+
+        <header class="site-header">
+        <nav class="navbar">
+            <a href="login.html">
+                <div class="logo">
+                    <div class="logo-icon"><img src="images/flooway-logo.png" alt="Logo"></div>
+                    <div class="logo-title">FlooWay</div>
+                </div>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="register.html" class="active">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <h1>Join FlooWay</h1>
+            <p class="auth-subtitle">Create your wizarding travel account</p>
+
+            <form class="auth-form" id="registerForm">
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name">
+                    <small class="error-msg"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email">
+                    <small class="error-msg"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone">
+                    <small class="error-msg"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age">
+                    <small class="error-msg"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Residential Address</label>
+                    <textarea id="address" rows="2"></textarea>
+                    <small class="error-msg"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password">
+                    <small class="error-msg"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirmPassword">
+                    <small class="error-msg"></small>
+                </div>
+
+                <button type="submit" class="hero-btn">Create Account</button>
+
+                <p class="auth-switch">
+                    Already have an account?
+                    <a href="login.html">Login</a>
+                </p>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="success-modal" id="successModal">
+        <div class="success-box">
+            <h2>Account Created! 🪄</h2>
+            <p>Your FlooWay account has been created successfully! We are thrilled to have you onboard!</p>
+            <button class="hero-btn" id="closeModal">Close</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner footer-center">
+            <div class="footer-brand">
+                <h3>FlooWay</h3>
+                <p>Wizarding Travel, Reimagined.</p>
+            </div>
+
+            <div class="footer-meta">
+                <p>© 2026 FlooWay</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/register.js"></script>
+      
+</body>
+</html>

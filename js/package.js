@@ -180,8 +180,9 @@ const packages = {
 
 };
 
-const params = new URLSearchParams(window.location.search);
-const key = params.get("package");
+const packagePageParams = new URLSearchParams(window.location.search);
+const key = packagePageParams.get("package");
+const userId = packagePageParams.get("uid");
 const data = packages[key];
 
 const badgeEl = document.getElementById("package-badge");
@@ -229,6 +230,6 @@ if (!data) {
     fillList(includedEl, data.includes);
     fillList(experiencesEl, data.experiences);
 
-    bookPackageBtn.href = `book-package.html?plan=${key}`;
+    bookPackageBtn.href = `book-package.html?plan=${key}&uid=${userId}`;
 
 }

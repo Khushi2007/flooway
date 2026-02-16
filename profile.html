@@ -3,22 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlooWay | Your Trips</title>
+    <title>FlooWay | Profile</title>
     <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fasthand&display=swap" rel="stylesheet">
-
 </head>
-<body class="page trips-page">
-
+<body class="page profile-page">
     <header class="site-header">
         <nav class="navbar">
             <a id="brandLink">
@@ -38,32 +30,60 @@
                 <li><a id="packagesLink">Packages</a></li>
                 <li><a id="aboutLink">About</a></li>
                 <li><a id="planYourTripLink">Plan Your Trip</a></li>
-                <li><a id="yourTripsLink" class="active">Your Trips</a></li>
+                <li><a id="yourTripsLink">Your Trips</a></li>
                 <li><a id="contactLink">Contact</a></li>
-                <li><a id="profileLink">Profile</a></li>
+                <li><a id="profileLink" class="active">Profile</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="page-hero trips-hero">
-            <h1>Your Magical Journeys</h1>
-            <p>All your planned and booked adventures, gathered in one place.</p>
-        </section>
-
-        <section class="trips-section">
-            <h2>Planned Trips</h2>
-            <div class="trips-container" id="plannedTrips">
-                <p class="empty-state">No planned trips yet.</p>
+        
+        <section class="profile-hero">
+            <div class="profile-hero-inner">
+                <div class="profile-avatar">🧙</div>
+                <h1 id="profileName">Wizard Traveler</h1>
+                <p>Member of the Floo Network</p>
             </div>
         </section>
 
-        <section class="trips-section">
-            <h2>Booked Packages</h2>
-            <div class="trips-container" id="bookedTrips">
-                <p class="empty-state">No packages booked yet.</p>
+        <section class="profile-section">
+            <div class="profile-card">
+                <h2>Account Details</h2>
+
+                <div class="profile-grid">
+                    <div>
+                        <span class="profile-label">Full Name</span>
+                        <p id="profileFullName">—</p>
+                    </div>
+                    
+                    <div>
+                        <span class="profile-label">Email</span>
+                        <p id="profileEmail">—</p>
+                    </div>
+
+                    <div>
+                        <span class="profile-label">Phone</span>
+                        <p id="profilePhone">—</p>
+                    </div>
+
+                    <div>
+                        <span class="profile-label">Age</span>
+                        <p id="profileAge">—</p>
+                    </div>
+
+                    <div>
+                        <span class="profile-label">Address</span>
+                        <p id="profileAddress">—</p>
+                    </div>
+                </div>
+
+                <div class="profile-actions">
+                    <button class="hero-btn logout-btn" id="logoutBtn">Logout</button>
+                </div>
             </div>
         </section>
+
     </main>
 
     <div class="error-modal" id="errorModal">
@@ -86,8 +106,9 @@
             </div>
         </div>
     </footer>
+
     <script src="js/navbar.js"></script>
-    <script src="js/your-trips.js"></script>
+    <script src="js/profile.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

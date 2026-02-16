@@ -54,6 +54,9 @@ const destinations = {
     }
 };
 
+const destinationsPageParams = new URLSearchParams(window.location.search);
+const userId = destinationsPageParams.get("uid");
+
 markers.forEach(marker => {
     marker.addEventListener('click', () => {
         const key = marker.dataset.destination;
@@ -64,7 +67,7 @@ markers.forEach(marker => {
         panelImg.alt = data.title;
         panelDesc.textContent = data.desc;
 
-        document.getElementById("explore-btn").href = `destination.html?place=${key}`;
+        document.getElementById("explore-btn").href = `destination.html?place=${key}&uid=${userId}`;
 
         panel.classList.add('open');
         overlay.classList.add('active');

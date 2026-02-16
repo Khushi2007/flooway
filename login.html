@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlooWay | Your Trips</title>
+    <title>FlooWay | Login</title>
     <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
@@ -15,13 +16,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fasthand&display=swap" rel="stylesheet">
-
 </head>
-<body class="page trips-page">
+<body class="auth-page">
 
-    <header class="site-header">
+        <header class="site-header">
         <nav class="navbar">
-            <a id="brandLink">
+            <a href="login.html">
                 <div class="logo">
                     <div class="logo-icon"><img src="images/flooway-logo.png" alt="Logo"></div>
                     <div class="logo-title">FlooWay</div>
@@ -33,38 +33,49 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a id="indexLink">Home</a></li>
-                <li><a id="destinationsLink">Destinations</a></li>
-                <li><a id="packagesLink">Packages</a></li>
-                <li><a id="aboutLink">About</a></li>
-                <li><a id="planYourTripLink">Plan Your Trip</a></li>
-                <li><a id="yourTripsLink" class="active">Your Trips</a></li>
-                <li><a id="contactLink">Contact</a></li>
-                <li><a id="profileLink">Profile</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html" class="active">Login</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="page-hero trips-hero">
-            <h1>Your Magical Journeys</h1>
-            <p>All your planned and booked adventures, gathered in one place.</p>
-        </section>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h1>Welcome Back</h1>
+            <p class="auth-subtitle">Log into your FlooWay account</p>
 
-        <section class="trips-section">
-            <h2>Planned Trips</h2>
-            <div class="trips-container" id="plannedTrips">
-                <p class="empty-state">No planned trips yet.</p>
-            </div>
-        </section>
+            <form class="auth-form" id="loginForm">
 
-        <section class="trips-section">
-            <h2>Booked Packages</h2>
-            <div class="trips-container" id="bookedTrips">
-                <p class="empty-state">No packages booked yet.</p>
-            </div>
-        </section>
-    </main>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email">
+                    <small class="error-msg"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password">
+                    <small class="error-msg"></small>
+                </div>
+
+                <button id="submit" class="hero-btn">Login</button>
+
+                <p class="auth-switch">
+                    Don't have an account?
+                    <a href="register.html">Register</a>
+                </p>
+
+            </form>
+        </div>
+    </div>
+    
+    <div class="success-modal" id="successModal">
+        <div class="success-box">
+            <h2>Signed In 🪄</h2>
+            <p>You have been logged into your FlooWay account successfully!</p>
+            <button class="hero-btn" id="closeModal">Close</button>
+        </div>
+    </div>
 
     <div class="error-modal" id="errorModal">
         <div class="error-box">
@@ -86,8 +97,9 @@
             </div>
         </div>
     </footer>
+    
     <script src="js/navbar.js"></script>
-    <script src="js/your-trips.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/login.js"></script>
+
 </body>
 </html>

@@ -212,8 +212,8 @@ const destinations = {
     }
 };
 
-const params = new URLSearchParams(window.location.search);
-const key = params.get("place");
+const destinationPageParams = new URLSearchParams(window.location.search);
+const key = destinationPageParams.get("place");
 const data = destinations[key];
 
 const titleEl = document.getElementById("dest-title");

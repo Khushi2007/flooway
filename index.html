@@ -13,7 +13,7 @@
 <body class="home">
     <header class="site-header">
         <nav class="navbar">
-            <a href="index.html">
+            <a id="brandLink">
                 <div class="logo">
                     <div class="logo-icon"><img src="images/flooway-logo.png" alt="Logo"></div>
                     <div class="logo-title">FlooWay</div>
@@ -25,13 +25,14 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="destinations.html">Destinations</a></li>
-                <li><a href="packages.html">Packages</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="plan-your-trip.html">Plan Your Trip</a></li>
-                <li><a href="your-trips.html">Your Trips</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a id="indexLink" class="active">Home</a></li>
+                <li><a id="destinationsLink">Destinations</a></li>
+                <li><a id="packagesLink">Packages</a></li>
+                <li><a id="aboutLink">About</a></li>
+                <li><a id="planYourTripLink">Plan Your Trip</a></li>
+                <li><a id="yourTripsLink">Your Trips</a></li>
+                <li><a id="contactLink">Contact</a></li>
+                <li><a id="profileLink">Profile</a></li>
             </ul>
         </nav>
     </header>
@@ -42,7 +43,7 @@
                 <h1>Travel by Flame</h1>
                 <p>Book magical journeys across the wizarding world.</p>
                 <div class="hero-btn-wrap">
-                    <a href="destinations.html" class="hero-btn">Explore Destinations</a>
+                    <a id="destinationsLink2" class="hero-btn">Explore Destinations</a>
                 </div>
             </div>
         </section>
@@ -113,10 +114,18 @@
             <div class="cta-box">
                 <h2>Ready to Travel by Flame?</h2>
                 <p>Discover enchanted destinations in seconds.</p>
-                <a href="packages.html" class="hero-btn">View Packages</a>
+                <a id="packagesLink2" class="hero-btn">View Packages</a>
             </div>
         </section>
     </main>
+
+    <div class="error-modal" id="errorModal">
+        <div class="error-box">
+            <h2 id="errorBoxTitle"></h2>
+            <p id="errorBoxMessage"></p>
+            <button class="delete-trip-btn" id="closeErrorModal">Close</button>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <div class="footer-inner footer-center">
@@ -132,5 +141,7 @@
     </footer>
 
     <script src="js/navbar.js"></script>
+    <script src="js/index.js"></script>
+
 </body>
 </html>

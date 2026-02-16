@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlooWay | Packages</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="image/x-icon" href="images/flooway-logo.png">
     <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
@@ -14,7 +13,7 @@
 <body class="page">
     <header class="site-header">
         <nav class="navbar">
-            <a href="index.html">
+            <a id="brandLink">
                 <div class="logo">
                     <div class="logo-icon"><img src="images/flooway-logo.png" alt="Logo"></div>
                     <div class="logo-title">FlooWay</div>
@@ -26,13 +25,14 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="destinations.html">Destinations</a></li>
-                <li><a href="packages.html" class="active">Packages</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="plan-your-trip.html">Plan Your Trip</a></li>
-                <li><a href="your-trips.html">Your Trips</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a id="indexLink">Home</a></li>
+                <li><a id="destinationsLink">Destinations</a></li>
+                <li><a id="packagesLink" class="active">Packages</a></li>
+                <li><a id="aboutLink">About</a></li>
+                <li><a id="planYourTripLink">Plan Your Trip</a></li>
+                <li><a id="yourTripsLink">Your Trips</a></li>
+                <li><a id="contactLink">Contact</a></li>
+                <li><a id="profileLink">Profile</a></li>
             </ul>
         </nav>
     </header>
@@ -51,7 +51,7 @@
                         <h4>Gryffindor Package</h4>
                         <p class="price">4 Days • ₹14,999/person</p>
                         <p class="desc">A bold journey through iconic wizarding landmarks, designed for the daring and the fearless.</p>
-                        <a href="package.html?package=gryffindor" class="hero-btn small">Book Now</a>
+                        <a id="gryffindorPackageLink" class="hero-btn small">Book Now</a>
                     </div>
                 </div>
 
@@ -62,7 +62,7 @@
                         <h4>Hogwarts Package</h4>
                         <p class="price">5 Days • ₹18,999/person</p>
                         <p class="desc">The definitive wizarding journey — Hogwarts, Hogsmeade, Diagon Alley, and beyond in one unforgettable trip.</p>
-                        <a href="package.html?package=hogwarts" class="hero-btn small">Book Now</a>
+                        <a id="hogwartsPackageLink" class="hero-btn small">Book Now</a>
                     </div>
                 </div>
 
@@ -72,7 +72,7 @@
                         <h4>Slytherin Package</h4>
                         <p class="price">4 Days • ₹15,999/person</p>
                         <p class="desc">An elegant, refined experience with access to hidden alleys, private tours, and premium stays.</p>
-                        <a href="package.html?package=slytherin" class="hero-btn small">Book Now</a>
+                        <a id="slytherinPackageLink" class="hero-btn small">Book Now</a>
                     </div>
                 </div>
 
@@ -82,7 +82,7 @@
                         <h4>Hufflepuff Package</h4>
                         <p class="price">3 Days • ₹11,299/person</p>
                         <p class="desc">A warm, cozy escape centered around charming villages, friendly inns, and magical hospitality.</p>
-                        <a href="package.html?package=hufflepuff" class="hero-btn small">Book Now</a>
+                        <a id="hufflepuffPackageLink" class="hero-btn small">Book Now</a>
                     </div>
                 </div>
                 
@@ -93,7 +93,7 @@
                         <h4>Forbidden Forest Package</h4>
                         <p class="price">3 Days • ₹15,499/person</p>
                         <p class="desc">Peak through the dangerous, magical woods bordering Hogwarts, filled with wonderous creature interactions.</p>
-                        <a href="package.html?package=forbidden_forest" class="hero-btn small">Book Now</a>
+                        <a id="forbiddenForestPackageLink" class="hero-btn small">Book Now</a>
                     </div>
                 </div>
 
@@ -103,12 +103,20 @@
                         <h4>Ravenclaw Package</h4>
                         <p class="price">4 Days • ₹13,499/person</p>
                         <p class="desc">A thoughtfully curated journey through historic locations rich in magical knowledge and lore.</p>
-                        <a href="package.html?package=ravenclaw" class="hero-btn small">Book Now</a>
+                        <a id="ravenclawPackageLink" class="hero-btn small">Book Now</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <div class="error-modal" id="errorModal">
+        <div class="error-box">
+            <h2 id="errorBoxTitle"></h2>
+            <p id="errorBoxMessage"></p>
+            <button class="delete-trip-btn" id="closeErrorModal">Close</button>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <div class="footer-inner footer-center">
@@ -123,5 +131,7 @@
         </div>
     </footer>
     <script src="js/navbar.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/packages.js"></script>
 </body>
 </html>

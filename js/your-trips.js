@@ -1,3 +1,6 @@
+const yourTripsPageParams = new URLSearchParams(window.location.search);
+const userId = yourTripsPageParams.get("uid");
+
 const destinationBookings = JSON.parse(localStorage.getItem("planTripData")) || [];
 const packageBookings = JSON.parse(localStorage.getItem("bookPackageData")) || [];
 
@@ -17,6 +20,9 @@ function clearEmptyState(container) {
     const empty = container.querySelector(".empty-state");
     if (empty) empty.remove();
 }
+
+const allUsers = JSON.parse(localStorage.getItem("flooway_users")) || [];
+const currentUser = allUsers[userId];
 
 const destinations = {
     hogsmeade: {
@@ -68,96 +74,92 @@ const packageImages = {
 
 const plannedTripsContainer = document.getElementById("plannedTrips");
 if (destinationBookings.length > 0) {
-    clearEmptyState(plannedTripsContainer);
     destinationBookings.forEach((trip, index) => {
-        const card = document.createElement("div");
-        card.className = "trip-card";
+        if (trip.uid == userId) {
+            clearEmptyState(plannedTripsContainer);
+            const card = document.createElement("div");
+            card.className = "trip-card";
 
-        card.style.background = `
-        linear-gradient(
-            rgba(0, 0, 0, 0.6),
-            rgba(0, 0, 0, 0.8)
-        ),
-        url("${destinations[trip.destination].img}")
-        `;
+            card.style.background = `
+            linear-gradient(
+                rgba(0, 0, 0, 0.6),
+                rgba(0, 0, 0, 0.8)
+            ),
+            url("${destinations[trip.destination].img}")
+            `;
 
-        card.style.backgroundSize = "cover";
-        card.style.backgroundRepeat = "no-repeat";
-        card.style.backgroundPosition = "center";
+            card.style.backgroundSize = "cover";
+            card.style.backgroundRepeat = "no-repeat";
+            card.style.backgroundPosition = "center";
 
-        card.innerHTML = `
-        <h3>${destinations[trip.destination].title}</h3>
-        <span><strong>Name: </strong>${trip.name}</span>
-        <span><strong>Email: </strong>${trip.email}</span>
-        <span><strong>Number of Travelers: </strong>${trip.travelers}</span>
-        <span><strong>Travel Date: </strong>${trip.date || "Not Specified"}</span>
-        <span><strong>Phone: </strong>${trip.phone}</span>
-        <span><strong>Age: </strong>${trip.age}</span>
-        <span><strong>Address: </strong>${trip.address}</span>
-        <span><strong>Message: </strong>${trip.notes || "No Specific Requests"}</span>
-        <span><strong>Planned On: </strong>${formatDate(trip.savedOn)}</span>
-        <button class="delete-trip-btn">Delete Trip</button>    
-        `;
+            card.innerHTML = `
+            <h3>${destinations[trip.destination].title}</h3>
+            <span><strong>Number of Travelers: </strong>${trip.travelers}</span>
+            <span><strong>Travel Date: </strong>${trip.date || "Not Specified"}</span>
+            <span><strong>Message: </strong>${trip.notes || "No Specific Requests"}</span>
+            <span><strong>Planned On: </strong>${formatDate(trip.savedOn)}</span>
+            <button class="delete-trip-btn">Delete Trip</button>    
+            `;
 
-        card.querySelector(".delete-trip-btn").addEventListener("click", () => {
-            destinationBookings.splice(index, 1);
-            localStorage.setItem("planTripData", JSON.stringify(destinationBookings));
-            card.remove();
+            card.querySelector(".delete-trip-btn").addEventListener("click", () => {
+                destinationBookings.splice(index, 1);
+                localStorage.setItem("planTripData", JSON.stringify(destinationBookings));
+                card.remove();
 
-            if (destinationBookings.length === 0) {
-                plannedTripsContainer.innerHTML = 
-                    `<p class="empty-state">No planned trips yet.</p>`;
-            }
-        });
+                if (destinationBookings.length === 0) {
+                    plannedTripsContainer.innerHTML = 
+                        `<p class="empty-state">No planned trips yet.</p>`;
+                }
+            });
 
-        plannedTripsContainer.appendChild(card);
+            plannedTripsContainer.appendChild(card);
+        }
     });
 }
 
 const bookedTripsContainer = document.getElementById("bookedTrips");
 if (packageBookings.length > 0) {
-    clearEmptyState(bookedTripsContainer);
     packageBookings.forEach((booking, index) => {
-        const card = document.createElement("div");
-        card.className = "trip-card";
+        if (booking.uid == userId) {
+            clearEmptyState(bookedTripsContainer);
+            const card = document.createElement("div");
+            card.className = "trip-card";
 
-        card.style.background = `
-        linear-gradient(
-            rgba(0, 0, 0, 0.6),
-            rgba(0, 0, 0, 0.8)
-        ),
-        url("${packageImages[booking.packageKey]}")
-        `;
+            card.style.background = `
+            linear-gradient(
+                rgba(0, 0, 0, 0.6),
+                rgba(0, 0, 0, 0.8)
+            ),
+            url("${packageImages[booking.packageKey]}")
+            `;
 
-        card.style.backgroundSize = "cover";
-        card.style.backgroundRepeat = "no-repeat";
-        card.style.backgroundPosition = "center";
-    
-        card.innerHTML = `
-        <h3>${booking.packageTitle}</h3>
-        <span><strong>Name: </strong>${booking.name}</span>
-        <span><strong>Email: </strong>${booking.email}</span>
-        <span><strong>Travel Date: </strong>${booking.date}</span>
-        <span><strong>Number of Travelers: </strong>${booking.travelers}</span>
-        <span><strong>Phone: </strong>${booking.phone}</span>
-        <span><strong>Age: </strong>${booking.age}</span>
-        <span><strong>Address: </strong>${booking.address}</span>
-        <span><strong>Message: </strong>${booking.requests || "No Specific Requests"}</span>
-        <span><strong>Booked On: </strong>${formatDate(booking.savedOn)}</span>
-        <button class="delete-trip-btn">Delete Booking</button>
-        `;
+            card.style.backgroundSize = "cover";
+            card.style.backgroundRepeat = "no-repeat";
+            card.style.backgroundPosition = "center";
+        
+            card.innerHTML = `
+            <h3>${booking.packageTitle}</h3>
+            
+            <span><strong>Travel Date: </strong>${booking.date}</span>
+            <span><strong>Number of Travelers: </strong>${booking.travelers}</span>
+            <span><strong>Message: </strong>${booking.requests || "No Specific Requests"}</span>
+            <span><strong>Booked On: </strong>${formatDate(booking.savedOn)}</span>
+            <button class="delete-trip-btn">Delete Booking</button>
+            `;
 
-        card.querySelector(".delete-trip-btn").addEventListener("click", () => {
-            packageBookings.splice(index, 1);
-            localStorage.setItem("bookPackageData", JSON.stringify(packageBookings));
-            card.remove();
+            card.querySelector(".delete-trip-btn").addEventListener("click", () => {
+                packageBookings.splice(index, 1);
+                localStorage.setItem("bookPackageData", JSON.stringify(packageBookings));
+                card.remove();
 
-            if (packageBookings.length === 0) {
-                bookedTripsContainer.innerHTML = 
-                    `<p class="empty-state">No packages booked yet.</p>`;
-            }
-        });
+                if (packageBookings.length === 0) {
+                    bookedTripsContainer.innerHTML = 
+                        `<p class="empty-state">No packages booked yet.</p>`;
+                }
+            });
 
-        bookedTripsContainer.appendChild(card);
+            bookedTripsContainer.appendChild(card);
+    }
     });
+    
 }
