@@ -11,6 +11,9 @@ const phone = document.getElementById("profilePhone");
 const age = document.getElementById("profileAge");
 const address = document.getElementById("profileAddress");
 
+const successModal = document.getElementById("successModal");
+const closeSuccessModal = document.getElementById("closeModal");
+
 profileName.textContent = currentUser.name;
 fullName.textContent = currentUser.name;
 email.textContent = currentUser.email;
@@ -23,6 +26,12 @@ const logoutBtn = document.getElementById("logoutBtn");
 logoutBtn.addEventListener("click", () => {
     allUsers[userId].isLoggedIn = false;
     localStorage.setItem("flooway_users", JSON.stringify(allUsers));
-    alert("Signed out successfully");
-    window.location.href = "login.html";
+    successModal.style.display = "flex";
+    setTimeout(() => {
+        window.location.href = "login.html";
+    }, 5000);
+});
+
+closeSuccessModal.addEventListener("click", () => {
+    modal.style.display = "none";
 });
