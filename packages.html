@@ -43,70 +43,54 @@
             <p>Curated magical journeys, crafted with care.</p>
         </section>
 
-        <section class="packages-grid-section">
-            <div class="packages-grid">
-                <div class="package-card gryffindor">
-                    <div class="package-content">
-                        <h3>Bravery & Firebound Trails</h3>
-                        <h4>Gryffindor Package</h4>
-                        <p class="price">4 Days • ₹14,999/person</p>
-                        <p class="desc">A bold journey through iconic wizarding landmarks, designed for the daring and the fearless.</p>
-                        <a id="gryffindorPackageLink" class="hero-btn small">Book Now</a>
-                    </div>
+        <section class="packages-controls-section">
+            <div class="packages-controls">
+                <div class="filter-group">
+                    <label>Search</label>
+                    <input type="text" placeholder="Search magical journeys..." id="packageSearch">
                 </div>
-
-                <div class="package-card hogwarts">
-                    <span class="badge">Most Popular</span>
-                    <div class="package-content">
-                        <h3>The Complete Wizarding Passage</h3>
-                        <h4>Hogwarts Package</h4>
-                        <p class="price">5 Days • ₹18,999/person</p>
-                        <p class="desc">The definitive wizarding journey — Hogwarts, Hogsmeade, Diagon Alley, and beyond in one unforgettable trip.</p>
-                        <a id="hogwartsPackageLink" class="hero-btn small">Book Now</a>
-                    </div>
+                <div class="filter-group">
+                    <label>House</label>
+                    <select id="houseFilter">
+                        <option value="">All</option>
+                        <option value="gryffindor">Gryffindor</option>
+                        <option value="slytherin">Slytherin</option>
+                        <option value="hufflepuff">Hufflepuff</option>
+                        <option value="ravenclaw">Ravenclaw</option>
+                    </select>
                 </div>
-
-                <div class="package-card slytherin">
-                    <div class="package-content">
-                        <h3>Ambition in Emerald Shadows</h3>
-                        <h4>Slytherin Package</h4>
-                        <p class="price">4 Days • ₹15,999/person</p>
-                        <p class="desc">An elegant, refined experience with access to hidden alleys, private tours, and premium stays.</p>
-                        <a id="slytherinPackageLink" class="hero-btn small">Book Now</a>
-                    </div>
+                <div class="filter-group">
+                    <label>Max Price</label>
+                    <select id="priceFilter">
+                        <option value="">No limit</option>
+                        <option value="12000">Under ₹12,000</option>
+                        <option value="15000">Under ₹15,000</option>
+                        <option value="18000">Under ₹18,000</option>
+                    </select>
                 </div>
-
-                <div class="package-card hufflepuff">
-                    <div class="package-content">
-                        <h3>Hearth & Wand Retreat</h3>
-                        <h4>Hufflepuff Package</h4>
-                        <p class="price">3 Days • ₹11,299/person</p>
-                        <p class="desc">A warm, cozy escape centered around charming villages, friendly inns, and magical hospitality.</p>
-                        <a id="hufflepuffPackageLink" class="hero-btn small">Book Now</a>
-                    </div>
+                <div class="filter-group">
+                    <label>Duration</label>
+                    <select id="durationFilter">
+                        <option value="">Any</option>
+                        <option value="3">Up to 3 days</option>
+                        <option value="4">Up to 4 days</option>
+                        <option value="5">Up to 5 days</option>
+                    </select>
                 </div>
-                
-                <div class="package-card forbidden-forest">
-                    <span class="badge">Popular</span>
-                    <div class="package-content">
-                        <h3>Secrets of the Dark Forest</h3>
-                        <h4>Forbidden Forest Package</h4>
-                        <p class="price">3 Days • ₹15,499/person</p>
-                        <p class="desc">Peak through the dangerous, magical woods bordering Hogwarts, filled with wonderous creature interactions.</p>
-                        <a id="forbiddenForestPackageLink" class="hero-btn small">Book Now</a>
-                    </div>
-                </div>
-
-                <div class="package-card ravenclaw">
-                    <div class="package-content">
-                        <h3>Paths of Wit & Wonder</h3>
-                        <h4>Ravenclaw Package</h4>
-                        <p class="price">4 Days • ₹13,499/person</p>
-                        <p class="desc">A thoughtfully curated journey through historic locations rich in magical knowledge and lore.</p>
-                        <a id="ravenclawPackageLink" class="hero-btn small">Book Now</a>
-                    </div>
+                <div class="filter-group">
+                    <label>Sort By</label>
+                    <select id="sortFilter">
+                        <option value="">Default</option>
+                        <option value="price">Price (Low → High)</option>
+                        <option value="duration">Duration (Short → Long)</option>
+                        <option value="popularity">Popularity</option>
+                    </select>
                 </div>
             </div>
+        </section>
+
+        <section class="packages-grid-section">
+            <div class="packages-grid" id="packagesGrid"></div>
         </section>
     </main>
 
