@@ -99,7 +99,7 @@ form.addEventListener("submit", (e) => {
                 form.reset();
                 setTimeout(() => {
                     window.location.href = `index.html?uid=${uid}`;
-                }, 5000);
+                }, 3000);
             }
         }
 

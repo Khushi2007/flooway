@@ -14,7 +14,7 @@ if (!(existingUsers.length != 0 && existingUsers[uid] && existingUsers[uid].isLo
     errorModal.style.display = "flex";
     setTimeout(() => {
         window.location.href = "login.html";
-    }, 5000);
+    }, 3000);
     
 }
 

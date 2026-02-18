@@ -29,7 +29,7 @@ logoutBtn.addEventListener("click", () => {
     successModal.style.display = "flex";
     setTimeout(() => {
         window.location.href = "login.html";
-    }, 5000);
+    }, 3000);
 });
 
 closeSuccessModal.addEventListener("click", () => {
