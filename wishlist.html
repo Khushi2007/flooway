@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlooWay | Profile</title>
-    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
+    <title>FlooWay | Wishlist</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="page profile-page">
+<body class="profile-page">
+    
     <header class="site-header">
         <nav class="navbar">
             <a id="brandLink">
@@ -37,63 +38,19 @@
         </nav>
     </header>
 
-    <main>
-        
-        <section class="profile-hero">
-            <div class="profile-hero-inner">
-                <div class="profile-avatar">🧙</div>
-                <h1 id="profileName">Wizard Traveler</h1>
-                <p>Member of the Floo Network</p>
-            </div>
-        </section>
+    <section class="packages-grid-section">
+        <h1 style="
+        text-align: center; 
+        color: #1E5F4B; 
+        font-family: 'Cinzel', serif; 
+        font-size: 2.2rem; 
+        letter-spacing: 0.08em;
+        margin: 2rem 0 2rem 0;
+        text-shadow: 0 0 10px rgba(201, 162, 77, 0.4), 0 0 25px rgba(201, 162, 77, 0.2);
+        ">Your Wishlist</h1>
 
-        <section class="profile-section">
-            <div class="profile-card">
-                <h2>Account Details</h2>
-
-                <div class="profile-grid">
-                    <div>
-                        <span class="profile-label">Full Name</span>
-                        <p id="profileFullName">—</p>
-                    </div>
-                    
-                    <div>
-                        <span class="profile-label">Email</span>
-                        <p id="profileEmail">—</p>
-                    </div>
-
-                    <div>
-                        <span class="profile-label">Phone</span>
-                        <p id="profilePhone">—</p>
-                    </div>
-
-                    <div>
-                        <span class="profile-label">Age</span>
-                        <p id="profileAge">—</p>
-                    </div>
-
-                    <div>
-                        <span class="profile-label">Address</span>
-                        <p id="profileAddress">—</p>
-                    </div>
-                </div>
-
-                <div class="profile-actions">
-                    <a id="wishlistLink" class="hero-btn">Wishlist</a>
-                    <button class="hero-btn logout-btn" id="logoutBtn">Logout</button>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <div class="success-modal" id="successModal">
-        <div class="success-box">
-            <h2>Signed out! 🪄</h2>
-            <p>You have successfully signed out of FlooWay!</p>
-            <button class="hero-btn" id="closeModal">Close</button>
-        </div>
-    </div>
+        <div id="wishlistGrid" class="packages-grid"></div>
+    </section>
 
     <div class="error-modal" id="errorModal">
         <div class="error-box">
@@ -117,7 +74,7 @@
     </footer>
 
     <script src="js/navbar.js"></script>
-    <script src="js/profile.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/wishlist.js"></script>
 </body>
 </html>

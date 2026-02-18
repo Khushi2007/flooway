@@ -995,12 +995,54 @@ body.profile-page {
     transform: scale(1.05);
 }
 
+.wishlist-btn {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    background: rgba(0, 0, 0, 0.45);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+}
+
+.heart-icon {
+    font-size: 20px;
+    color: white;
+    line-height: 1;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.wishlist-btn.active {
+    box-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
+}
+
+.wishlist-btn.active .heart-icon {
+    color: crimson;
+    content: "♥";
+    text-shadow: 0 0 8px rgba(220,20,60,0.6);
+}
+
+.wishlist-btn:hover .heart-icon {
+    transform: scale(1.2);
+    color: crimson;
+}
+
+.package-content {
+    padding-bottom: 2.8rem;
+}
 
 .package-content,
 .house-icon,
 .badge {
     position: relative;
-    z-index: 1;
+    z-index: 3;
 }
 
 .package-card:hover::before {

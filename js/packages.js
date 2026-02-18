@@ -72,22 +72,6 @@ const package_cards = [
 
 const packagesGrid = document.getElementById("packagesGrid");
 
-// package_cards.forEach(package_card => {
-//     let badge = (package_card.badge === "none") ? "" : `<span class="badge">${package_card.badge}</span>`;
-//     packagesGrid.innerHTML += `
-//     <div class="package-card ${package_card.class}">
-//         ${badge}
-//         <div class="package-content">
-//             <h3>${package_card.heading}</h3>
-//             <h4>${package_card.subheading}</h4>
-//             <p class="price">${package_card.price}</p>
-//             <p class="desc">${package_card.desc}</p>
-//             <a id="${package_card.linkId}" class="hero-btn small">Book Now</a>
-//         </div>
-//     </div>
-//     `;
-// });
-
 function renderPackageCards(cards) {
     packagesGrid.innerHTML = "";
 
@@ -95,6 +79,9 @@ function renderPackageCards(cards) {
         let badge = (package_card.badge === "none") ? "" : `<span class="badge">${package_card.badge}</span>`
         packagesGrid.innerHTML += `
         <div class="package-card ${package_card.class}">
+            <button class="wishlist-btn" data-package="${package_card.class}">
+                <span class="heart-icon">♡</span>
+            </button>
             ${badge}
             <div class="package-content">
                 <h3>${package_card.heading}</h3>
@@ -107,6 +94,30 @@ function renderPackageCards(cards) {
         `;
     });
     attachPageLinks();
+}
+
+function setupWishlistButtons() {
+    const wishlistKey = `flooway_wishlist_${userId}`;
+    let wishlist = JSON.parse(localStorage.getItem(wishlistKey)) || [];
+    document.querySelectorAll(".wishlist-btn").forEach(btn => {
+        const pkgKey = btn.dataset.package;
+        if (wishlist.includes(pkgKey)) {
+            btn.classList.add("active");
+            btn.querySelector(".heart-icon").textContent = "♥";
+        }
+        btn.addEventListener("click", () => {
+            if (wishlist.includes(pkgKey)) {
+                wishlist = wishlist.filter(p => p !== pkgKey);
+                btn.classList.remove("active");
+                btn.querySelector(".heart-icon").textContent = "♡";
+            } else {
+                wishlist.push(pkgKey);
+                btn.classList.add("active");
+                btn.querySelector(".heart-icon").textContent = "♥";
+            }
+            localStorage.setItem(wishlistKey, JSON.stringify(wishlist));
+        });
+    });
 }
 
 function attachPageLinks() {
@@ -125,6 +136,7 @@ function attachPageLinks() {
 }
 
 renderPackageCards(package_cards);
+setupWishlistButtons();
 
 const searchInput = document.getElementById("packageSearch");
 const houseFilter = document.getElementById("houseFilter");
@@ -181,17 +193,3 @@ houseFilter.addEventListener("change", filterPackages);
 priceFilter.addEventListener("change", filterPackages);
 durationFilter.addEventListener("change", filterPackages);
 sortFilter.addEventListener("change", filterPackages);
-
-// const gryffindorPackageLink = document.getElementById("gryffindorPackageLink");
-// const hogwartsPackageLink = document.getElementById("hogwartsPackageLink");
-// const slytherinPackageLink = document.getElementById("slytherinPackageLink");
-// const hufflepuffPackageLink = document.getElementById("hufflepuffPackageLink");
-// const forbiddenForestPackageLink = document.getElementById("forbiddenForestPackageLink");
-// const ravenclawPackageLink = document.getElementById("ravenclawPackageLink");
-
-// gryffindorPackageLink.setAttribute("href", `package.html?package=gryffindor&uid=${uid}`);
-// hogwartsPackageLink.setAttribute("href", `package.html?package=hogwarts&uid=${uid}`);
-// slytherinPackageLink.setAttribute("href", `package.html?package=slytherin&uid=${uid}`);
-// hufflepuffPackageLink.setAttribute("href", `package.html?package=hufflepuff&uid=${uid}`);
-// forbiddenForestPackageLink.setAttribute("href", `package.html?package=forbidden_forest&uid=${uid}`);
-// ravenclawPackageLink.setAttribute("href", `package.html?package=ravenclaw&uid=${uid}`);

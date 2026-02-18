@@ -22,6 +22,7 @@ age.textContent = currentUser.age;
 address.textContent = currentUser.address;
 
 const logoutBtn = document.getElementById("logoutBtn");
+const wishlistLink = document.getElementById("wishlistLink");
 
 logoutBtn.addEventListener("click", () => {
     allUsers[userId].isLoggedIn = false;
@@ -31,6 +32,8 @@ logoutBtn.addEventListener("click", () => {
         window.location.href = "login.html";
     }, 3000);
 });
+
+wishlistLink.setAttribute("href", `wishlist.html?uid=${userId}`);
 
 closeSuccessModal.addEventListener("click", () => {
     modal.style.display = "none";
